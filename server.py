@@ -20,10 +20,10 @@ def get_config():
         pods.append(
             {
                 "node": i.spec.node_name,
-                "ip": i.status.pod_ip
+                "ip": i.status.pod_ip,
                 "namespace": i.metadata.namespace,
                 "name": i.metadata.name,            
-                "status": i.status.phase
+                "status": i.status.phase,
             }
         )
 
