@@ -37,7 +37,7 @@ def post_free():
 
     f= open("job-free.yml")
     job_yml = yaml.safe_load(f)
-    api_instance = client.BatchV1Api(v1)
+    api_instance = client.BatchV1Api()
     api_response = api_instance.create_namespaced_job(namespace='free-service',body=job_yml)
     return api_response
 
@@ -45,7 +45,7 @@ def post_free():
 def post_premium():
     f= open("job-premium.yml")
     job_yml = yaml.safe_load(f)
-    api_instance = client.BatchV1Api(v1)
+    api_instance = client.BatchV1Api()
     api_response = api_instance.create_namespaced_job(namespace='default',body=job_yml)
     return api_response
     
