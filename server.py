@@ -15,7 +15,7 @@ app = Flask(__name__)
 def get_config():
     pods = []
 
-    # pods = v1.list_pod_for_all_namespaces()
+    pods = v1.list_pod_for_all_namespaces()
 
     output = {"pods": pods}
     output = json.dumps(output)
