@@ -38,7 +38,7 @@ def post_free():
     f= open("job-free.yml")
     job_yml = yaml.safe_load(f)
     api_instance = client.BatchV1Api(v1)
-    api_response = api_instance.create_namespaced_job(job_yml)
+    api_response = api_instance.create_namespaced_job(namespace='free-service',body=job_yml)
     return api_response
 
 @app.route('/img-classification/premium', methods=['POST'])
@@ -46,7 +46,7 @@ def post_premium():
     f= open("job-premium.yml")
     job_yml = yaml.safe_load(f)
     api_instance = client.BatchV1Api(v1)
-    api_response = api_instance.create_namespaced_job(job_yml)
+    api_response = api_instance.create_namespaced_job(namespace='default',body=job_yml)
     return api_response
     
 if __name__ == "__main__":
