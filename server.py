@@ -38,16 +38,22 @@ def post_free():
     f= open("job-free.yml")
     job_yml = yaml.safe_load(f)
     api_instance = client.BatchV1Api()
-    api_response = api_instance.create_namespaced_job(namespace='free-service',body=job_yml)
-    return api_response
+    try:
+        api_response = api_instance.create_namespaced_job(namespace='free-service',body=job_yml)
+        return "success", 200
+    except Exception as e:
+        return str(e), 400
 
 @app.route('/img-classification/premium', methods=['POST'])
 def post_premium():
     f= open("job-premium.yml")
     job_yml = yaml.safe_load(f)
     api_instance = client.BatchV1Api()
-    api_response = api_instance.create_namespaced_job(namespace='default',body=job_yml)
-    return api_response
+    try:
+        api_response = api_instance.create_namespaced_job(namespace='default',body=job_yml)
+        return "success", 200
+    except Exception as e:
+        return str(e), 400
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000)
