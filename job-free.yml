@@ -4,7 +4,7 @@ metadata:
   name: free
 spec:
   hard:
-    requests.cpu: "0.9"
+    requests.cpu: "900m"
   template:
     spec:
       containers:

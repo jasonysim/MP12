@@ -4,7 +4,5 @@ metadata:
   name: free-service
 spec:
   hard:
-    requests.cpu: "0.9"
-    requests.memory: 1Gi
+    requests.cpu: "900m"
     limits.cpu: "2"
-    limits.memory: 2Gi
