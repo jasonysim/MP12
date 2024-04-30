@@ -35,7 +35,7 @@ def get_config():
 @app.route('/img-classification/free',methods=['POST'])
 def post_free():
 
-    f= open("free-job.yaml")
+    f= open("job-free.yaml")
     job_yml = yaml.safe_load(f)
     v1.create_namespaced_job(job_yml)
     return "success", 200
