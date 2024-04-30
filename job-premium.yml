@@ -3,14 +3,14 @@ kind: Job
 metadata:
   name: premium
 spec:
-  hard:
-    requests.cpu: "900m"
   template:
     spec:
       containers:
       - name: premium
         image: jasonyoungsim/mp12:latest
         command: ["python", "classify.py"]
+        resources:
+          requests.cpu: "900m"
         env:
           - name: APP_ENV
             value: development
