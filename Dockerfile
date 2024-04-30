@@ -1,37 +1,38 @@
 FROM python:3.6
 
-# Creating Application Source Code Directory
-RUN ...
-
-# Setting Home Directory for containers
-WORKDIR ...
-
-# Copy src files folder (requirements.txt and classify.py)
-COPY ...
-
-# Installing python dependencies
-RUN ...
-
-# create directories for models and data
-RUN ...
-RUN ...
-
-# Preload the data
-RUN ...
-
-# Pretrain the models
-RUN ...
-RUN ...
-RUN ...
-RUN ...
-
-
 # Application Environment variables. 
 # These variables will be used when you run the image. 
 # You will also need to pass corresponding DATASET and TYPE variables from the job yaml files of both free-service and default types of jobs.
 ENV APP_ENV development
 ENV DATASET mnist
 ENV TYPE ff
+
+# Creating Application Source Code Directory
+RUN mkdir -p /app
+
+# Setting Home Directory for containers
+WORKDIR /app
+
+# Copy src files folder (requirements.txt and classify.py)
+COPY requirements.txt /app
+COPY classify.py /app
+COPY train.py /app
+COPY data_preload.py /app
+COPY utils.py /app
+COPY models.py /app
+
+# Installing python dependencies
+RUN pip install -r requirements.txt
+
+# create directories for models and data
+RUN mkdir -p /app/models
+RUN mkdir -p /app/data
+
+# Preload the data
+RUN python data_preload.py
+
+# Pretrain the models
+RUN python train.py
 
 # Exposing Ports
 EXPOSE 5035
@@ -40,4 +41,4 @@ EXPOSE 5035
 VOLUME ["/app-data"]
 
 # Running Python Application (classify.py)
-CMD ...
+CMD ["python", "classify.py"]
