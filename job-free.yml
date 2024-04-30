@@ -11,6 +11,7 @@ spec:
         image: jasonyoungsim/mp12:latest
         command: ["python", "classify.py"]
         resources:
+          limits.cpu: "900m"   
           requests.cpu: "900m"
         env:
           - name: APP_ENV
@@ -20,4 +21,3 @@ spec:
           - name: TYPE
             value: ff
       restartPolicy: Never
-  backoffLimit: 4
