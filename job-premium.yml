@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: premium
+  generateName: premium
 spec:
   template:
     spec:
       containers:
-      - name: premium
+      - name: mp12
         image: jasonyoungsim/mp12:latest
         command: ["python", "classify.py"]
         resources:
