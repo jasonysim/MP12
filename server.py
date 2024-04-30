@@ -4,7 +4,7 @@ from os import path
 import yaml, random, string, json
 import sys
 import json
-
+from pprint import pprint
 # Configs can be set in Configuration class directly or using helper utility
 config.load_kube_config()
 v1 = client.CoreV1Api()
@@ -40,6 +40,7 @@ def post_free():
     api_instance = client.BatchV1Api()
     try:
         api_response = api_instance.create_namespaced_job(namespace='free-service',body=job_yml)
+        pprint(api_response)
         return str(api_response), 200
     except Exception as e:
         return str(e), 400
