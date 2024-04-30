@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: free
+  namespace: free-service
+spec:
+  template:
+    spec:
+      containers:
+      - name: mp12
+        image: jasonyoungsim/mp12:latest
+        command: ["python", "classify.py"]
+        env:
+          - name: APP_ENV
+            value: development
+          - name: DATASET
+            value: mnist
+          - name: TYPE
+            value: ff
+      restartPolicy: Never
