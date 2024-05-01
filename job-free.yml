@@ -11,9 +11,11 @@ spec:
         image: jasonyoungsim/mp12:latest
         command: ["python", "classify.py"]
         resources:
+          limits:
+            cpu: "2"
           requests:
             cpu: "0.9"
-        env:
+          env:
           - name: APP_ENV
             value: development
           - name: DATASET

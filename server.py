@@ -40,7 +40,6 @@ def post_free():
     api_instance = client.BatchV1Api()
     try:
         api_response = api_instance.create_namespaced_job(namespace='free-service',body=job_yml)
-        pprint(api_response)
         return str(api_response), 200
     except Exception as e:
         return str(e), 400
@@ -52,7 +51,6 @@ def post_premium():
     api_instance = client.BatchV1Api()
     try:
         api_response = api_instance.create_namespaced_job(namespace='default',body=job_yml)
-        pprint(api_response)
         return str(api_response), 200
     except Exception as e:
         return str(e), 400
