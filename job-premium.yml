@@ -11,8 +11,6 @@ spec:
         image: jasonyoungsim/fuckthis:latest
         command: ["python", "classify.py"]
         resources:
-          limits:
-            cpu: "1"
           requests:
             cpu: "900m"
         env:
