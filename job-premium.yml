@@ -17,9 +17,9 @@ spec:
             cpu: "900m"
         env:
           - name: APP_ENV
-            value: development
+            value: "development"
           - name: DATASET
-            value: kminst
+            value: "kminst"
           - name: TYPE
-            value: cnn
+            value: "cnn"
       restartPolicy: Never            
