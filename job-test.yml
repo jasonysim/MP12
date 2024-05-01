@@ -19,7 +19,7 @@ spec:
           - name: APP_ENV
             value: "development"
           - name: DATASET
-            value: "mnist"
+            value: "kmnist"
           - name: TYPE
             value: "cnn"
       restartPolicy: Never
