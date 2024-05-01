@@ -19,7 +19,7 @@ spec:
           - name: APP_ENV
             value: development
           - name: DATASET
-            value: kmnist
+            value: kminst
           - name: TYPE
             value: cnn
       restartPolicy: OnFailure            
