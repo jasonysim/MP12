@@ -31,20 +31,22 @@ RUN python data_preload.py
 ENV APP_ENV=development
 ENV DATASET=mnist
 ENV TYPE=ff
-RUN python train.py
 
 run echo "$APP_ENV"
 run echo "$DATASET"
 run echo "$TYPE"
+
+RUN python train.py
 
 ENV APP_ENV=development
 ENV DATASET=kmnist
 ENV TYPE=cnn
-RUN python train.py
 
 run echo "$APP_ENV"
 run echo "$DATASET"
 run echo "$TYPE"
+
+RUN python train.py
 
 # Exposing Ports
 EXPOSE 5035
