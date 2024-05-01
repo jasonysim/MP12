@@ -12,7 +12,7 @@ spec:
         command: ["python", "classify.py"]
         resources:
           requests:
-            cpu: "900m"
+            cpu: "0.9"
         env:
           - name: APP_ENV
             value: development
