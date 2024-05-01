@@ -12,6 +12,8 @@ def main():
     dataset_name = os.environ["DATASET"]
     model_name = os.environ["TYPE"]
     print("dataset:", dataset_name)
+    print("model_name:", model_name)
+    print(os.listdir("./models"))
 
     input_size = 784  # The image size = 28 x 28 = 784
     hidden_size = 500  # The number of nodes at the hidden layer
