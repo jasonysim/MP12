@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: mp12b
+      - name: lastmp
         image: jasonyoungsim/lastmp:latest
         command: ["python", "classify.py"]
         resources:

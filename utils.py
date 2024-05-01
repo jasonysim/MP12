@@ -3,7 +3,7 @@ import torchvision.datasets as dsets
 import torch
 from torch.autograd import Variable
 from models import FFNN, CNN
-import os
+
 
 def get_dataset(dataset_name, model_name):
     train_dataset = []
