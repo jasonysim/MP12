@@ -22,4 +22,4 @@ spec:
             value: kminst
           - name: TYPE
             value: cnn
-      restartPolicy: OnFailure            
+      restartPolicy: Never            
