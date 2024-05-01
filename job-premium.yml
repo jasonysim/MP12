@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: mp12b
-        image: jasonyoungsim/mp12b:latest
+        image: jasonyoungsim/mp12:latest
         command: ["python", "classify.py"]
         resources:
           requests:
