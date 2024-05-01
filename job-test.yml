@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: free
-  namespace: free-service
+  name: premium
+  namespace: default
 spec:
   template:
     spec:
@@ -12,14 +12,14 @@ spec:
         command: ["python", "classify.py"]
         resources:
           limits:
-            cpu: "2"   
+            cpu: "1"
           requests:
             cpu: "900m"
         env:
           - name: APP_ENV
             value: development
           - name: DATASET
-            value: mnist
+            value: kminst
           - name: TYPE
-            value: ff
+            value: cnn
       restartPolicy: Never
