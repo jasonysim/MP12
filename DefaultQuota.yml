@@ -4,5 +4,5 @@ metadata:
   name: premium
 spec:
   hard:
-    requests.cpu: "2"
-    limits.cpu: "2"
+    requests.cpu: "3"
+    limits.cpu: "3"

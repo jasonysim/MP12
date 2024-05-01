@@ -5,7 +5,7 @@ url = "https://vh4xhmjk3lw2ibz5k6sa4i6fym0ltkqv.lambda-url.us-east-1.on.aws/"
 
 payload = {
     "submitterEmail": 'jasonys2@illinois.edu', # Your Email Id as it appears in the coursera instruction page.
-    "secret": 'wzzYr4ccWjkXFtvH', # Your token as it appears in the coursera instruction page. This token will only be valid for 30 mins.
+    "secret": 'yTjLx3vZnYTb7rJK', # Your token as it appears in the coursera instruction page. This token will only be valid for 30 mins.
     "ipaddress": '54.144.139.27:5000' # Public IPv4 address which you can find on the EC2 instance home page. Add port number on which your server is running (5000). Do NOT include "http://" in the IP address!
 }
 
