@@ -11,6 +11,8 @@ spec:
         image: jasonyoungsim/lastmp:latest
         command: ["python", "classify.py"]
         resources:
+          limits:
+            cpu: "2"   
           requests:
             cpu: "900m"
         env:
