@@ -12,7 +12,7 @@ spec:
         command: ["python", "classify.py"]
         resources:
           limits:
-            cpu: "1"   
+            cpu: "2"   
           requests:
             cpu: "900m"
         env:
