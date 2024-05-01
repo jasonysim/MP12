@@ -29,14 +29,36 @@ RUN python data_preload.py
 # These variables will be used when you run the image. 
 # You will also need to pass corresponding DATASET and TYPE variables from the job yaml files of both free-service and default types of jobs.
 
-ENV APP_ENV=development
-ENV DATASET=kmnist
-ENV TYPE=cnn
-
+ENV APP_ENV development
+ENV DATASET kmnist
+ENV TYPE cnn
 run echo "$APP_ENV"
 run echo "$DATASET"
 run echo "$TYPE"
+RUN python train.py
 
+ENV APP_ENV development
+ENV DATASET mnist
+ENV TYPE cnn
+run echo "$APP_ENV"
+run echo "$DATASET"
+run echo "$TYPE"
+RUN python train.py
+
+ENV APP_ENV development
+ENV DATASET mnist
+ENV TYPE ff
+run echo "$APP_ENV"
+run echo "$DATASET"
+run echo "$TYPE"
+RUN python train.py
+
+ENV APP_ENV development
+ENV DATASET kmnist
+ENV TYPE ff
+run echo "$APP_ENV"
+run echo "$DATASET"
+run echo "$TYPE"
 RUN python train.py
 
 # Exposing Ports
